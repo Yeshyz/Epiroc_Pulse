@@ -1,0 +1,23 @@
+# Agent worktrees/clones should never be inside the main repo
+EpirocPulse-Architecture/
+EpirocPulse-Diagnostics/
+EpirocPulse-Docs/
+EpirocPulse-Orchestrator/
+EpirocPulse-QA/
+EpirocPulse-Reporting/
+EpirocPulse-UI/
+
+# Temporary backups
+_agent_folder_backup/
+
+# Build output
+bin/
+obj/
+.vs/
+
+# Visual Studio Code
+.vscode/
+
+# User files
+*.user
+*.suo
