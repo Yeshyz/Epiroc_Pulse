@@ -1,0 +1,12 @@
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\bin\Debug\net10.0\EpirocPulse.Core.deps.json
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\bin\Debug\net10.0\EpirocPulse.Core.dll
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\bin\Debug\net10.0\EpirocPulse.Core.pdb
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\EpirocPulse.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\EpirocPulse.Core.AssemblyInfoInputs.cache
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\EpirocPulse.Core.AssemblyInfo.cs
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\EpirocPulse.Core.csproj.CoreCompileInputs.cache
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\EpirocPulse.Core.sourcelink.json
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\EpirocPulse.Core.dll
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\refint\EpirocPulse.Core.dll
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\EpirocPulse.Core.pdb
+D:\00_Epiroc\00_Epiroc_Pulse\src\EpirocPulse.Core\obj\Debug\net10.0\ref\EpirocPulse.Core.dll

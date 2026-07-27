@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EpirocPulse.App/EpirocPulse.App.csproj" />
+    <Project Path="src/EpirocPulse.Core/EpirocPulse.Core.csproj" />
+    <Project Path="src/EpirocPulse.Diagnostics/EpirocPulse.Diagnostics.csproj" />
+    <Project Path="src/EpirocPulse.Infrastructure/EpirocPulse.Infrastructure.csproj" />
+    <Project Path="src/EpirocPulse.Reporting/EpirocPulse.Reporting.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EpirocPulse.Core.Tests/EpirocPulse.Core.Tests.csproj" />
+    <Project Path="tests/EpirocPulse.Diagnostics.Tests/EpirocPulse.Diagnostics.Tests.csproj" />
+    <Project Path="tests/EpirocPulse.Reporting.Tests/EpirocPulse.Reporting.Tests.csproj" />
+  </Folder>
+</Solution>
