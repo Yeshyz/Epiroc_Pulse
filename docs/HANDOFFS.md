@@ -8,223 +8,134 @@ This file records work that one agent needs from another.
 
 \## Active Handoffs
 
-### HANDOFF-0001
+
+
+### HANDOFF-0001 - Dashboard Adapter Display
+
+
 
 Status: Open  
-From Agent: QA Agent  
-To Agent: Any Agent (immediate action required)  
-Related Issue: N/A  
-Related Branch: Main  
-Priority: Blocking  
+From Agent: Diagnostics  
+To Agent: UI  
+Related Issue: #TODO (Dashboard Adapter Integration)  
+Related Branch: feature/dashboard-adapter-display  
+Priority: High / Blocking  
+
+
 
 ## Request
 
-Delete `src/EpirocPulse.Reporting/Class1.cs` to unblock build.
+Implement UI components to display network adapter information on the application dashboard after Network Adapter Detection service is merged.
+
+
 
 ## Reason
 
-Build currently fails with 11 compilation errors due to duplicate class definition. This blocks all development work until resolved.
+UI cannot proceed with adapter display until Diagnostics Agent completes and merges the Network Adapter Detection service, which provides the data model and detection logic.
+
+
 
 ## Acceptance Criteria
 
-- \[ ] Class1.cs deleted from EpirocPulse.Reporting project
-- \[ ] `dotnet build` completes successfully
-- \[ ] No compilation errors
-- \[ ] All test projects compile
+- [ ] Adapter list displays on dashboard with name, status, and IP information
+- [ ] Adapter details view shows extended information (MAC address, speed, gateway)
+- [ ] Adapter status updates reflect diagnostic results from service
+- [ ] UI gracefully handles no adapters found scenario
+- [ ] All UI tests pass
+
+
 
 ## Files Allowed
 
-- `src/EpirocPulse.Reporting/Class1.cs` (for deletion only)
+- `src/EpirocPulse.App/ViewModels/AdapterViewModel.cs`
+- `src/EpirocPulse.App/Views/AdapterPanel.xaml`
+- `src/EpirocPulse.App/Views/AdapterPanel.xaml.cs`
+- `tests/EpirocPulse.App.Tests/ViewModels/AdapterViewModelTests.cs`
+- `tests/EpirocPulse.App.Tests/Views/AdapterPanelTests.cs`
+
+
 
 ## Files Not Allowed
 
-- Any production source files
-- Architecture or documentation files
+- `src/EpirocPulse.Diagnostics/`
+- `src/EpirocPulse.Reporting/`
+- `src/EpirocPulse.Infrastructure/`
+- `docs/AGENT_STATUS_BOARD.md`
+- `docs/BLOCKERS.md`
+- `CHANGELOG.md`
+
+
 
 ## Completion Notes
 
-(To be filled when task complete)
+Add notes when complete.
+
+
 
 ---
 
-### HANDOFF-0002
+
+
+### HANDOFF-0002 - Adapter Report Integration
+
+
 
 Status: Open  
-From Agent: QA Agent  
-To Agent: Infrastructure Agent  
-Related Issue: N/A  
-Related Branch: Main  
-Priority: High  
+From Agent: Diagnostics  
+To Agent: Reporting  
+Related Issue: #TODO (Adapter Report Integration)  
+Related Branch: feature/adapter-reporting  
+Priority: High / Blocking  
+
+
 
 ## Request
 
-Implement Infrastructure layer abstractions and concrete implementations.
+Integrate network adapter detection results into Markdown diagnostic reports after Network Adapter Detection service is merged.
+
+
 
 ## Reason
 
-Infrastructure abstractions are prerequisites for Diagnostics implementation. Currently placeholder only.
+Reporting cannot include adapter diagnostics until Diagnostics Agent completes and merges the Network Adapter Detection service with its result models and detection output.
+
+
 
 ## Acceptance Criteria
 
-- \[ ] INetworkClient interface defined
-- \[ ] IProcessExecutor interface defined
-- \[ ] IFileService interface defined
-- \[ ] ISystemInformation interface defined
-- \[ ] Windows implementations provided
-- \[ ] Mock implementations for testing
-- \[ ] 90%+ test coverage for Infrastructure layer
-- \[ ] No compilation warnings
+- [ ] Adapter section included in diagnostic report template
+- [ ] Report includes adapter name, status, IP address, and MAC address
+- [ ] Report shows adapter diagnostic summary (pass/warning/fail status)
+- [ ] Report includes raw adapter output in details section
+- [ ] Report generation tests pass
+- [ ] Generated reports validate against schema
+
+
 
 ## Files Allowed
 
-- `src/EpirocPulse.Infrastructure/**`
-- `tests/EpirocPulse.Infrastructure.Tests/**` (to be created)
+- `src/EpirocPulse.Reporting/Templates/DiagnosticReportTemplate.md`
+- `src/EpirocPulse.Reporting/Builders/AdapterReportBuilder.cs`
+- `src/EpirocPulse.Reporting/Models/AdapterReportSection.cs`
+- `tests/EpirocPulse.Reporting.Tests/Builders/AdapterReportBuilderTests.cs`
+- `tests/EpirocPulse.Reporting.Tests/Models/AdapterReportSectionTests.cs`
+
+
 
 ## Files Not Allowed
 
-- Diagnostics layer files
-- App layer files
-- Core layer files
+- `src/EpirocPulse.Diagnostics/`
+- `src/EpirocPulse.App/`
+- `src/EpirocPulse.Infrastructure/`
+- `docs/AGENT_STATUS_BOARD.md`
+- `docs/BLOCKERS.md`
+- `CHANGELOG.md`
+
+
 
 ## Completion Notes
 
-(To be filled when task complete)
-
----
-
-### HANDOFF-0003
-
-Status: Open  
-From Agent: QA Agent  
-To Agent: Diagnostics Agent  
-Related Issue: N/A  
-Related Branch: Main  
-Priority: High  
-
-## Request
-
-Implement diagnostic services and orchestration logic.
-
-## Reason
-
-Core functionality of Epiroc Pulse. Diagnostics currently placeholder only.
-
-## Acceptance Criteria
-
-- \[ ] INetworkDiagnosticsService (orchestrator) implemented
-- \[ ] IAdapterDetectionService implemented
-- \[ ] IGatewayCheckService implemented
-- \[ ] IDeviceReachabilityService implemented
-- \[ ] ITcpPortCheckService implemented
-- \[ ] INetworkIssueDetectionService implemented
-- \[ ] All services use Infrastructure abstractions
-- \[ ] 90%+ test coverage with mocked Infrastructure
-- \[ ] All services return DiagnosticResult with proper fields
-
-## Files Allowed
-
-- `src/EpirocPulse.Diagnostics/**`
-- `tests/EpirocPulse.Diagnostics.Tests/**`
-
-## Files Not Allowed
-
-- Infrastructure files
-- App files
-- Core files
-- Reporting files
-
-## Completion Notes
-
-(To be filled when task complete)
-
----
-
-### HANDOFF-0004
-
-Status: Open  
-From Agent: QA Agent  
-To Agent: UI Agent  
-Related Issue: N/A  
-Related Branch: Main  
-Priority: High  
-
-## Request
-
-Implement ViewModels and wire UI to diagnostic services.
-
-## Reason
-
-UI shell exists but is non-functional. Requires ViewModels and dependency injection.
-
-## Acceptance Criteria
-
-- \[ ] DashboardViewModel implemented with INotifyPropertyChanged
-- \[ ] DiagnosticsViewModel with service integration
-- \[ ] ReportsViewModel with export logic
-- \[ ] SettingsViewModel with preferences
-- \[ ] HelpViewModel with documentation
-- \[ ] All ViewModels properly bound to Views
-- \[ ] Command handling implemented
-- \[ ] Status badges display correctly
-- \[ ] No code-behind logic (MVVM compliant)
-
-## Files Allowed
-
-- `src/EpirocPulse.App/ViewModels/**` (to be created)
-- `src/EpirocPulse.App/Views/**` (for view modifications)
-
-## Files Not Allowed
-
-- Other layer files
-- Core files
-- Infrastructure files
-
-## Completion Notes
-
-(To be filled when task complete)
-
----
-
-### HANDOFF-0005
-
-Status: Open  
-From Agent: QA Agent  
-To Agent: Architecture Agent  
-Related Issue: N/A  
-Related Branch: Main  
-Priority: Medium  
-
-## Request
-
-Setup dependency injection container and composition root in App layer.
-
-## Reason
-
-Services need to be registered and injected into ViewModels. Currently no DI setup.
-
-## Acceptance Criteria
-
-- \[ ] DI container configured (Microsoft.Extensions.DependencyInjection or equivalent)
-- \[ ] All services registered
-- \[ ] ViewModels registered
-- \[ ] Composition root in App.xaml.cs or startup
-- \[ ] No circular dependencies
-- \[ ] All references in architecture decision logs
-
-## Files Allowed
-
-- `src/EpirocPulse.App/App.xaml.cs`
-- `src/EpirocPulse.App/App.xaml`
-- Configuration files added as needed
-
-## Files Not Allowed
-
-- Production service files
-- Core files
-
-## Completion Notes
-
-(To be filled when task complete)
+Add notes when complete.
 
 
 

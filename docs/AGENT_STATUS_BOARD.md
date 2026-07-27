@@ -2,7 +2,7 @@
 
 
 
-Last Updated: 2026-07-27 01:02:57
+Last Updated: YYYY-MM-DD HH:MM
 
 
 
@@ -38,7 +38,7 @@ Last Updated: 2026-07-27 01:02:57
 
 |---|---|---|---|
 
-| qa/review | QA Agent | `docs/QA_REVIEW.md`, `docs/BLOCKERS.md`, `docs/HANDOFFS.md` | QA Review findings and handoffs to other agents |
+| coordination/orchestrator | Orchestrator | `docs/AGENT\_\*`, `docs/BLOCKERS.md`, `docs/HANDOFFS.md` | Coordination only |
 
 
 
