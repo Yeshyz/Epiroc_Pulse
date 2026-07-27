@@ -1,0 +1,83 @@
+<Page x:Class="EpirocPulse.App.Views.DiagnosticsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="Diagnostics"
+      Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
+        <StackPanel>
+            <!-- Header -->
+            <TextBlock FontSize="28" FontWeight="Bold" Text="Diagnostics" Margin="0,0,0,16"/>
+            <TextBlock FontSize="14" Foreground="{StaticResource TextLightBrush}" Text="Run network diagnostics to troubleshoot connection issues" Margin="0,0,0,24"/>
+
+            <!-- Run All Button -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,24">
+                <Button Padding="12,8,12,8" Background="{StaticResource AccentBrush}" Foreground="White" Content="Run All Diagnostics" FontSize="13" FontWeight="SemiBold" Margin="0,0,8,0"/>
+                <Button Padding="12,8,12,8" Background="Transparent" Foreground="{StaticResource TextLightBrush}" BorderBrush="{StaticResource TextLightBrush}" BorderThickness="1" Content="Export Results" FontSize="13"/>
+            </StackPanel>
+
+            <!-- Available Diagnostics List -->
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Available Diagnostics" Margin="0,0,0,16"/>
+                    
+                    <!-- Placeholder Item 1 -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="13" Text="Network Adapter Detection"/>
+                        <Button Grid.Column="1" Padding="8,4,8,4" Background="{StaticResource AccentBrush}" Foreground="White" Content="Run" FontSize="11"/>
+                    </Grid>
+
+                    <Separator Background="#E0E0E0" Margin="0,0,0,12"/>
+
+                    <!-- Placeholder Item 2 -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="13" Text="Subnet Validation"/>
+                        <Button Grid.Column="1" Padding="8,4,8,4" Background="{StaticResource AccentBrush}" Foreground="White" Content="Run" FontSize="11"/>
+                    </Grid>
+
+                    <Separator Background="#E0E0E0" Margin="0,0,0,12"/>
+
+                    <!-- Placeholder Item 3 -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="13" Text="Gateway Reachability"/>
+                        <Button Grid.Column="1" Padding="8,4,8,4" Background="{StaticResource AccentBrush}" Foreground="White" Content="Run" FontSize="11"/>
+                    </Grid>
+
+                    <Separator Background="#E0E0E0" Margin="0,0,0,12"/>
+
+                    <!-- Placeholder Item 4 -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="13" Text="Machine Port Connectivity"/>
+                        <Button Grid.Column="1" Padding="8,4,8,4" Background="{StaticResource AccentBrush}" Foreground="White" Content="Run" FontSize="11"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Info Section -->
+            <Border Style="{StaticResource CardStyle}" Background="#E8F4F8" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock FontSize="13" FontWeight="SemiBold" Foreground="{StaticResource InfoBrush}" Text="ℹ️ Running Diagnostics" Margin="0,0,0,8"/>
+                    <TextBlock FontSize="12" Foreground="{StaticResource TextLightBrush}" TextWrapping="Wrap" Text="Diagnostics will check your network configuration and connectivity to Epiroc machines. Results are shown as Pass, Warning, Fail, or Info. No data is collected or stored."/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
