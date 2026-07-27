@@ -1,0 +1,131 @@
+<Page x:Class="EpirocPulse.App.Views.HelpView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="Help"
+      Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
+        <StackPanel>
+            <!-- Header -->
+            <TextBlock FontSize="28" FontWeight="Bold" Text="Help" Margin="0,0,0,16"/>
+            <TextBlock FontSize="14" Foreground="{StaticResource TextLightBrush}" Text="Get assistance and learn how to use Epiroc Pulse" Margin="0,0,0,24"/>
+
+            <!-- Quick Start -->
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Quick Start" Margin="0,0,0,12"/>
+                    <StackPanel>
+                        <TextBlock FontSize="12" Margin="0,0,0,8"><Run FontWeight="Bold">1. Dashboard</Run><Run> View the current application status and recent activity</Run></TextBlock>
+                        <TextBlock FontSize="12" Margin="0,0,0,8"><Run FontWeight="Bold">2. Run Diagnostics</Run><Run> Navigate to the Diagnostics tab to run network checks</Run></TextBlock>
+                        <TextBlock FontSize="12" Margin="0,0,0,8"><Run FontWeight="Bold">3. Review Results</Run><Run> Diagnostic results show Pass, Warning, Fail, or Info status</Run></TextBlock>
+                        <TextBlock FontSize="12"><Run FontWeight="Bold">4. Generate Report</Run><Run> Create and export diagnostic reports from the Reports tab</Run></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Understanding Status Badges -->
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Understanding Status Badges" Margin="0,0,0,16"/>
+                    
+                    <!-- Pass Badge -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Style="{StaticResource PassBadgeStyle}">
+                            <TextBlock Style="{StaticResource BadgeTextStyle}" Text="Pass"/>
+                        </Border>
+                        <TextBlock Grid.Column="1" FontSize="12" Foreground="{StaticResource TextLightBrush}" Margin="16,0,0,0"><Run FontWeight="Bold">Green (Pass)</Run><Run>Everything is working correctly</Run></TextBlock>
+                    </Grid>
+
+                    <!-- Warning Badge -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Style="{StaticResource WarningBadgeStyle}">
+                            <TextBlock Style="{StaticResource BadgeTextStyle}" Text="Warning"/>
+                        </Border>
+                        <TextBlock Grid.Column="1" FontSize="12" Foreground="{StaticResource TextLightBrush}" Margin="16,0,0,0"><Run FontWeight="Bold">Amber (Warning)</Run><Run>There may be an issue that requires attention</Run></TextBlock>
+                    </Grid>
+
+                    <!-- Fail Badge -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Style="{StaticResource FailBadgeStyle}">
+                            <TextBlock Style="{StaticResource BadgeTextStyle}" Text="Fail"/>
+                        </Border>
+                        <TextBlock Grid.Column="1" FontSize="12" Foreground="{StaticResource TextLightBrush}" Margin="16,0,0,0"><Run FontWeight="Bold">Red (Fail)</Run><Run>A critical issue prevents normal operation</Run></TextBlock>
+                    </Grid>
+
+                    <!-- Info Badge -->
+                    <Grid Margin="0,0,0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Style="{StaticResource InfoBadgeStyle}">
+                            <TextBlock Style="{StaticResource BadgeTextStyle}" Text="Info"/>
+                        </Border>
+                        <TextBlock Grid.Column="1" FontSize="12" Foreground="{StaticResource TextLightBrush}" Margin="16,0,0,0"><Run FontWeight="Bold">Blue (Info)</Run><Run>General information or status update</Run></TextBlock>
+                    </Grid>
+
+                    <!-- Skipped Badge -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Style="{StaticResource SkippedBadgeStyle}">
+                            <TextBlock Style="{StaticResource BadgeTextStyle}" Text="Skipped"/>
+                        </Border>
+                        <TextBlock Grid.Column="1" FontSize="12" Foreground="{StaticResource TextLightBrush}" Margin="16,0,0,0"><Run FontWeight="Bold">Gray (Skipped)</Run><Run>Diagnostic was not run or is not applicable</Run></TextBlock>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Common Issues -->
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="Common Issues" Margin="0,0,0,12"/>
+                    
+                    <StackPanel Margin="0,0,0,12">
+                        <TextBlock FontSize="12" FontWeight="Bold" Text="Machine not responding"/>
+                        <TextBlock FontSize="11" Foreground="{StaticResource TextLightBrush}" TextWrapping="Wrap" Text="Check that the machine IP and port are correctly configured in Settings" Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <Separator Background="#E0E0E0" Margin="0,0,0,12"/>
+
+                    <StackPanel Margin="0,0,0,12">
+                        <TextBlock FontSize="12" FontWeight="Bold" Text="Network connection issues"/>
+                        <TextBlock FontSize="11" Foreground="{StaticResource TextLightBrush}" TextWrapping="Wrap" Text="Verify that your computer is connected to the correct network and has internet access" Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <Separator Background="#E0E0E0" Margin="0,0,0,12"/>
+
+                    <StackPanel>
+                        <TextBlock FontSize="12" FontWeight="Bold" Text="Diagnostics running slowly"/>
+                        <TextBlock FontSize="11" Foreground="{StaticResource TextLightBrush}" TextWrapping="Wrap" Text="Increase the diagnostic timeout in Settings or check your network bandwidth" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Support -->
+            <Border Style="{StaticResource CardStyle}" Background="#E8F4F8" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock FontSize="16" FontWeight="SemiBold" Foreground="{StaticResource InfoBrush}" Text="Need More Help?" Margin="0,0,0,12"/>
+                    <TextBlock FontSize="12" Foreground="{StaticResource TextLightBrush}" TextWrapping="Wrap" Text="If you need additional assistance, please contact your Epiroc administrator or support team with the diagnostic report." Margin="0,0,0,12"/>
+                    <Button Padding="12,8,12,8" Width="180" Background="{StaticResource AccentBrush}" Foreground="White" Content="Export Diagnostic Log" FontSize="12" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

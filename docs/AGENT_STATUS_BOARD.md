@@ -2,7 +2,7 @@
 
 
 
-Last Updated: 2026-07-27 01:50
+Last Updated: YYYY-MM-DD HH:MM
 
 
 
@@ -24,7 +24,7 @@ Last Updated: 2026-07-27 01:50
 
 | Reporting | Idle | N/A | N/A | N/A | Await task |
 
-| QA | Idle | N/A | N/A | N/A | Await task |
+| QA | Active | qa/review | QA Review - Build validation, test coverage analysis, risk identification | BLOCKER-0001 | Fix build, run tests, create CI/CD pipeline |
 
 | Docs | Idle | N/A | N/A | N/A | Await task |
 
@@ -39,8 +39,6 @@ Last Updated: 2026-07-27 01:50
 |---|---|---|---|
 
 | coordination/orchestrator | Orchestrator | `docs/AGENT\_\*`, `docs/BLOCKERS.md`, `docs/HANDOFFS.md` | Coordination only |
-
-| feature/adapter-detection | Diagnostics | `src/EpirocPulse.Diagnostics/`, `src/EpirocPulse.Core/Models/` | In progress |
 
 
 
