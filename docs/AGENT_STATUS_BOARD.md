@@ -2,7 +2,7 @@
 
 
 
-Last Updated: YYYY-MM-DD HH:MM
+Last Updated: 2026-07-27 01:02:57
 
 
 
@@ -24,7 +24,7 @@ Last Updated: YYYY-MM-DD HH:MM
 
 | Reporting | Idle | N/A | N/A | N/A | Await task |
 
-| QA | Idle | N/A | N/A | N/A | Await task |
+| QA | Active | qa/review | QA Review - Build validation, test coverage analysis, risk identification | BLOCKER-0001 | Fix build, run tests, create CI/CD pipeline |
 
 | Docs | Idle | N/A | N/A | N/A | Await task |
 
@@ -38,7 +38,7 @@ Last Updated: YYYY-MM-DD HH:MM
 
 |---|---|---|---|
 
-| coordination/orchestrator | Orchestrator | `docs/AGENT\_\*`, `docs/BLOCKERS.md`, `docs/HANDOFFS.md` | Coordination only |
+| qa/review | QA Agent | `docs/QA_REVIEW.md`, `docs/BLOCKERS.md`, `docs/HANDOFFS.md` | QA Review findings and handoffs to other agents |
 
 
 
