@@ -4,6 +4,110 @@
              xmlns:local="clr-namespace:EpirocPulse.App"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- Color Scheme -->
+        <Color x:Key="PrimaryColor">#2C3E50</Color>
+        <Color x:Key="AccentColor">#3498DB</Color>
+        <Color x:Key="PassColor">#27AE60</Color>
+        <Color x:Key="WarningColor">#F39C12</Color>
+        <Color x:Key="FailColor">#E74C3C</Color>
+        <Color x:Key="InfoColor">#3498DB</Color>
+        <Color x:Key="SkippedColor">#95A5A6</Color>
+        <Color x:Key="BackgroundColor">#ECF0F1</Color>
+        <Color x:Key="SurfaceColor">#FFFFFF</Color>
+        <Color x:Key="TextColor">#2C3E50</Color>
+        <Color x:Key="TextLightColor">#7F8C8D</Color>
+
+        <!-- Brushes -->
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+        <SolidColorBrush x:Key="PassBrush" Color="{StaticResource PassColor}"/>
+        <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
+        <SolidColorBrush x:Key="FailBrush" Color="{StaticResource FailColor}"/>
+        <SolidColorBrush x:Key="InfoBrush" Color="{StaticResource InfoColor}"/>
+        <SolidColorBrush x:Key="SkippedBrush" Color="{StaticResource SkippedColor}"/>
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+        <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource SurfaceColor}"/>
+        <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}"/>
+        <SolidColorBrush x:Key="TextLightBrush" Color="{StaticResource TextLightColor}"/>
+
+        <!-- Global Styles -->
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+        </Style>
+
+        <!-- Status Badge Style -->
+        <Style x:Key="StatusBadgeStyle" TargetType="Border">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Fit"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Pass Badge -->
+        <Style x:Key="PassBadgeStyle" TargetType="Border" BasedOn="{StaticResource StatusBadgeStyle}">
+            <Setter Property="Background" Value="{StaticResource PassBrush}"/>
+        </Style>
+
+        <!-- Warning Badge -->
+        <Style x:Key="WarningBadgeStyle" TargetType="Border" BasedOn="{StaticResource StatusBadgeStyle}">
+            <Setter Property="Background" Value="{StaticResource WarningBrush}"/>
+        </Style>
+
+        <!-- Fail Badge -->
+        <Style x:Key="FailBadgeStyle" TargetType="Border" BasedOn="{StaticResource StatusBadgeStyle}">
+            <Setter Property="Background" Value="{StaticResource FailBrush}"/>
+        </Style>
+
+        <!-- Info Badge -->
+        <Style x:Key="InfoBadgeStyle" TargetType="Border" BasedOn="{StaticResource StatusBadgeStyle}">
+            <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+        </Style>
+
+        <!-- Skipped Badge -->
+        <Style x:Key="SkippedBadgeStyle" TargetType="Border" BasedOn="{StaticResource StatusBadgeStyle}">
+            <Setter Property="Background" Value="{StaticResource SkippedBrush}"/>
+        </Style>
+
+        <!-- Badge Text Style -->
+        <Style x:Key="BadgeTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+        <!-- Navigation Button Style -->
+        <Style x:Key="NavButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextLightBrush}"/>
+            <Setter Property="Padding" Value="16,12,16,12"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#34495E"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Card Style -->
+        <Style x:Key="CardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource SurfaceBrush}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="Margin" Value="8"/>
+        </Style>
     </Application.Resources>
 </Application>

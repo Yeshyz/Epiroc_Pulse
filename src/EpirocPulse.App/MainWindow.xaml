@@ -4,9 +4,62 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EpirocPulse.App"
+        xmlns:views="clr-namespace:EpirocPulse.App.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Epiroc Pulse"
+        Height="720"
+        Width="1280"
+        Background="{StaticResource BackgroundBrush}"
+        WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- Navigation Sidebar -->
+        <Grid Grid.Column="0" Background="{StaticResource PrimaryBrush}">
+            <StackPanel VerticalAlignment="Top">
+                <!-- Logo/Title -->
+                <TextBlock Padding="16,20,16,10"
+                           Foreground="White"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Text="Epiroc Pulse"/>
+                <Separator Background="#34495E" Margin="0,10,0,10"/>
+
+                <!-- Navigation Buttons -->
+                <Button Name="DashboardBtn"
+                        Style="{StaticResource NavButtonStyle}"
+                        Foreground="White"
+                        Background="#34495E"
+                        Content="Dashboard"
+                        Click="NavigateToDashboard"/>
+                <Button Name="DiagnosticsBtn"
+                        Style="{StaticResource NavButtonStyle}"
+                        Content="Diagnostics"
+                        Click="NavigateToDiagnostics"/>
+                <Button Name="ReportsBtn"
+                        Style="{StaticResource NavButtonStyle}"
+                        Content="Reports"
+                        Click="NavigateToReports"/>
+                <Button Name="SettingsBtn"
+                        Style="{StaticResource NavButtonStyle}"
+                        Content="Settings"
+                        Click="NavigateToSettings"/>
+                <Button Name="HelpBtn"
+                        Style="{StaticResource NavButtonStyle}"
+                        Content="Help"
+                        Click="NavigateToHelp"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Column="1" Background="{StaticResource BackgroundBrush}">
+            <!-- Content Frame -->
+            <Frame Name="ContentFrame"
+                   NavigationUIVisibility="Hidden"
+                   Background="{StaticResource BackgroundBrush}"/>
+        </Grid>
     </Grid>
 </Window>
