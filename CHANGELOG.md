@@ -36,3 +36,27 @@ All notable changes to Epiroc Pulse will be documented in this file.
   \- Help view with quick start guide, badge legend, common issues, and support information
   \- MVVM-friendly structure with view and code-behind separation
 
+\- **Reporting V1** (in `src/EpirocPulse.Reporting/` and `src/EpirocPulse.Core/`):
+  \- `Report` domain model with title, generation timestamp, application version, device info, and diagnostic results
+  \- `DeviceInfo` model capturing computer name, user name, and operating system at report generation time
+  \- `DiagnosticResultSummary` model aggregating diagnostic result statistics (total, passed, warnings, failed, skipped)
+  \- `IReportGenerator` interface for dependency injection of report generation services
+  \- `MarkdownReportGenerator` implementation supporting:
+    \- Technician-friendly Markdown formatting with clear visual structure
+    \- Header section with report title, generation date/time, and application version
+    \- Device Information section showing computer name, user name, and OS
+    \- Diagnostic Results section with numbered diagnostics, status badges, summary, technical details, suggested actions, and timestamps
+    \- Summary section with aggregate statistics (total checks, passed, warnings, failed, skipped)
+    \- Appendix with raw diagnostic output in code blocks (optional)
+    \- Markdown special character escaping to prevent formatting conflicts
+    \- Status badge emoji support (✅ Pass, ⚠️ Warning, ❌ Fail, ℹ️ Info, ⊘ Skipped)
+  \- 15 comprehensive unit tests covering:
+    \- Valid report generation
+    \- All report sections and content
+    \- Empty diagnostic results handling
+    \- Markdown special character escaping
+    \- Status badge rendering
+    \- Raw output formatting
+    \- Multi-line diagnostic results
+    \- Markdown structure validation
+

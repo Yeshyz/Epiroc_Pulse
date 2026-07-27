@@ -208,19 +208,14 @@ public class MarkdownReportGenerator : IReportGenerator
             return text;
         }
 
-        // Escape Markdown special characters: *, _, [, ], (, ), #, +, -, ., !, \, `, |
+        // Escape only the characters that are special in Markdown table cells and general text
         return text
-            .Replace("\\", "\\\\")
-            .Replace("`", "\\`")
-            .Replace("[", "\\[")
-            .Replace("]", "\\]")
-            .Replace("*", "\\*")
-            .Replace("_", "\\_")
-            .Replace("#", "\\#")
-            .Replace("+", "\\+")
-            .Replace("-", "\\-")
-            .Replace(".", "\\.")
-            .Replace("!", "\\!")
-            .Replace("|", "\\|");
+            .Replace("\\", "\\\\")  // Backslash (must be first)
+            .Replace("|", "\\|")    // Pipe (special in tables)
+            .Replace("*", "\\*")    // Asterisk (bold/italic)
+            .Replace("_", "\\_")    // Underscore (bold/italic)
+            .Replace("[", "\\[")    // Bracket (links)
+            .Replace("]", "\\]")    // Bracket (links)
+            .Replace("`", "\\`");   // Backtick (code)
     }
 }
