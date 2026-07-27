@@ -2,7 +2,7 @@
 
 
 
-Last Updated: YYYY-MM-DD HH:MM
+Last Updated: 2026-07-27 01:50
 
 
 
@@ -39,6 +39,8 @@ Last Updated: YYYY-MM-DD HH:MM
 |---|---|---|---|
 
 | coordination/orchestrator | Orchestrator | `docs/AGENT\_\*`, `docs/BLOCKERS.md`, `docs/HANDOFFS.md` | Coordination only |
+
+| feature/adapter-detection | Diagnostics | `src/EpirocPulse.Diagnostics/`, `src/EpirocPulse.Core/Models/` | In progress |
 
 
 
